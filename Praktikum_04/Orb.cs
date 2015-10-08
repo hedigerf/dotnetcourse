@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
+
 
 namespace Praktikum_04
 {
-    abstract class Orb
+    public abstract class Orb
     {
         const double G = 30; //6.673e-11
 
@@ -36,7 +38,8 @@ namespace Praktikum_04
 
         public Orb(string name, double x, double y, double vx, double vy, double m)
         {
-            bitmap = new Bitmap(name + ".gif");
+            string path = Directory.GetCurrentDirectory();
+            bitmap = new Bitmap("..\\..\\" +name + ".gif");
             bitmap.MakeTransparent(bitmap.GetPixel(1, 1));
             pos = new Vektor(x, y, 0);
             v0 = new Vektor(vx, vy, 0);
@@ -50,9 +53,9 @@ namespace Praktikum_04
             // TODO
             // berechne neue Beschleunigung
             //XXXXXXXXXXXXXXXXXXXXXXX
-          //neue Position berechnen
-      double t = 3;
-           // posNew = pos + v0 * t + (t * t) * a;
+            //neue Position berechnen
+            double t = 3;
+            // posNew = pos + v0 * t + (t * t) * a;
             //v0 = v0 + t * a;
         }
 

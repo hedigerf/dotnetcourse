@@ -24,9 +24,14 @@ namespace Praktikum_04
             return new Vektor(a, 0, 0);
         }
 
+        public static implicit operator System.Drawing.Point(Vektor a)
+        {
+            return new System.Drawing.Point((int)a.XValue,(int)a.YValue);
+        }
+
         public static explicit operator double (Vektor a)
         {
-            return Math.Pow((Math.Pow(a.XValue,2.0) + Math.Pow(a.YValue,2.0) + Math.Pow(a.ZValue,2.0)),0.5);
+            return Math.Pow((Math.Pow(a.XValue, 2.0) + Math.Pow(a.YValue, 2.0) + Math.Pow(a.ZValue, 2.0)), 0.5);
         }
 
         public double this[int x]
